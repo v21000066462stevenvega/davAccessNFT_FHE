@@ -1,0 +1,673 @@
+/* HUD Theme Styles for DAV Access FHE System */
+.hud-theme {
+  --hud-bg: #f8f9fa;
+  --hud-surface: #ffffff;
+  --hud-primary: #28a745;
+  --hud-secondary: #6c757d;
+  --hud-accent: #17a2b8;
+  --hud-border: #dee2e6;
+  --hud-text: #212529;
+  --hud-success: #28a745;
+  --hud-warning: #ffc107;
+  --hud-danger: #dc3545;
+  --hud-glow: rgba(40, 167, 69, 0.3);
+}
+
+/* Base Styles */
+.app-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--hud-bg) 0%, #e9ecef 100%);
+  font-family: 'Courier New', monospace;
+  color: var(--hud-text);
+}
+
+/* HUD Header */
+.hud-header {
+  background: var(--hud-surface);
+  border-bottom: 2px solid var(--hud-primary);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 20px var(--hud-glow);
+}
+
+.hud-logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hud-logo h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--hud-text);
+}
+
+.hud-logo h1 span {
+  color: var(--hud-primary);
+}
+
+.hud-badge {
+  background: var(--hud-primary);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/* HUD Status Panel */
+.hud-status-panel {
+  display: flex;
+  gap: 2rem;
+}
+
+.status-item {
+  text-align: center;
+}
+
+.status-label {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--hud-secondary);
+  text-transform: uppercase;
+}
+
+.status-value {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--hud-primary);
+}
+
+/* HUD Buttons */
+.hud-button {
+  background: var(--hud-surface);
+  border: 2px solid var(--hud-border);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hud-button:hover {
+  border-color: var(--hud-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--hud-glow);
+}
+
+.hud-button.primary {
+  background: var(--hud-primary);
+  color: white;
+  border-color: var(--hud-primary);
+}
+
+.hud-button.danger {
+  background: var(--hud-danger);
+  color: white;
+  border-color: var(--hud-danger);
+}
+
+.hud-button.small {
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+}
+
+.hud-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* HUD Panels */
+.hud-panel {
+  background: var(--hud-surface);
+  border: 2px solid var(--hud-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.hud-banner {
+  background: linear-gradient(135deg, var(--hud-primary) 0%, var(--hud-accent) 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  margin: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hud-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: bold;
+}
+
+.encryption-animation {
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Preference Chart */
+.preference-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.preference-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.preference-label {
+  width: 120px;
+  font-size: 0.9rem;
+  color: var(--hud-secondary);
+}
+
+.preference-bar {
+  flex: 1;
+  height: 8px;
+  background: var(--hud-border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.preference-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--hud-primary), var(--hud-accent));
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.preference-value {
+  width: 40px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Dashboard Grid */
+.hud-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.hud-stat {
+  text-align: center;
+  padding: 1rem;
+  border: 2px solid var(--hud-border);
+  border-radius: 8px;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--hud-primary);
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--hud-secondary);
+  text-transform: uppercase;
+}
+
+/* Records List */
+.records-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.record-item {
+  border: 2px solid var(--hud-border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.record-item:hover {
+  border-color: var(--hud-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--hud-glow);
+}
+
+.record-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.vehicle-id {
+  font-weight: bold;
+  color: var(--hud-text);
+}
+
+.access-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.access-badge.temporary {
+  background: var(--hud-warning);
+  color: #000;
+}
+
+.access-badge.permanent {
+  background: var(--hud-primary);
+  color: white;
+}
+
+.record-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--hud-border);
+}
+
+.status-indicator {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.status-indicator.active {
+  background: var(--hud-success);
+  color: white;
+}
+
+.status-indicator.expired {
+  background: var(--hud-warning);
+  color: #000;
+}
+
+.status-indicator.revoked {
+  background: var(--hud-danger);
+  color: white;
+}
+
+/* Modal Styles */
+.hud-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.create-modal {
+  background: var(--hud-surface);
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 2px solid var(--hud-border);
+}
+
+.close-modal {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--hud-secondary);
+}
+
+.close-modal:hover {
+  color: var(--hud-danger);
+}
+
+/* Step Indicator */
+.step-indicator {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--hud-border);
+}
+
+.step-dot {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  background: var(--hud-border);
+  color: var(--hud-secondary);
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.step-dot.active {
+  background: var(--hud-primary);
+  color: white;
+}
+
+/* Form Elements */
+.hud-input, .hud-select, .hud-slider {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid var(--hud-border);
+  border-radius: 6px;
+  font-family: 'Courier New', monospace;
+  background: var(--hud-surface);
+}
+
+.hud-input:focus, .hud-select:focus {
+  outline: none;
+  border-color: var(--hud-primary);
+}
+
+.hud-slider {
+  -webkit-appearance: none;
+  height: 6px;
+  background: var(--hud-border);
+  border-radius: 3px;
+}
+
+.hud-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: var(--hud-primary);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Preference Controls */
+.preference-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.preference-slider {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Encryption Preview */
+.encryption-preview {
+  margin: 1.5rem 0;
+}
+
+.preview-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.data-section {
+  flex: 1;
+  padding: 1rem;
+  border: 2px solid var(--hud-border);
+  border-radius: 6px;
+}
+
+.data-section.encrypted {
+  border-color: var(--hud-primary);
+  background: rgba(40, 167, 69, 0.05);
+}
+
+.data-label {
+  font-size: 0.8rem;
+  color: var(--hud-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.data-value {
+  font-family: monospace;
+  font-size: 0.9rem;
+  word-break: break-all;
+}
+
+.encryption-arrow {
+  font-size: 1.5rem;
+  color: var(--hud-primary);
+  font-weight: bold;
+}
+
+/* Loading States */
+.loading-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 2rem;
+}
+
+.hud-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid var(--hud-border);
+  border-top: 4px solid var(--hud-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Transaction Status */
+.transaction-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.transaction-panel {
+  text-align: center;
+  padding: 2rem;
+}
+
+.transaction-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.transaction-icon.success {
+  color: var(--hud-success);
+}
+
+.transaction-icon.error {
+  color: var(--hud-danger);
+}
+
+/* Tutorial */
+.tutorial-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.hud-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  border: 2px solid var(--hud-border);
+  border-radius: 8px;
+}
+
+.step-marker {
+  background: var(--hud-primary);
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.step-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.step-content h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--hud-text);
+}
+
+.step-content p {
+  margin: 0;
+  color: var(--hud-secondary);
+}
+
+.step-details {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background: rgba(40, 167, 69, 0.1);
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+/* Footer */
+.hud-footer {
+  background: var(--hud-surface);
+  border-top: 2px solid var(--hud-border);
+  padding: 2rem;
+  margin-top: 3rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-tech {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.tech-badge {
+  background: var(--hud-border);
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hud-header {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .hud-status-panel {
+    gap: 1rem;
+  }
+  
+  .hud-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .records-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .create-modal {
+    width: 95%;
+    margin: 1rem;
+  }
+}
+
+/* No Records State */
+.no-records {
+  text-align: center;
+  padding: 3rem;
+  color: var(--hud-secondary);
+}
+
+.no-records-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+
+/* Animation for HUD elements */
+@keyframes hudGlow {
+  0% { box-shadow: 0 0 5px var(--hud-glow); }
+  50% { box-shadow: 0 0 20px var(--hud-glow); }
+  100% { box-shadow: 0 0 5px var(--hud-glow); }
+}
+
+.hud-panel:hover {
+  animation: hudGlow 2s ease-in-out infinite;
+}
